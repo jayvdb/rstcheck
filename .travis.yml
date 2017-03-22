@@ -10,11 +10,18 @@ python:
     - "3.6"
     - "nightly"
     - "pypy-5.4"
+    - "pypy3"
+    - "pypy3.3-5.5-alpha"
 
 env:
     -
     - LANG=
     - SPHINX=1
+
+matrix:
+  exclude:
+    - python: "pypy3"
+      env: SPHINX=1
 
 install:
     - python setup.py --quiet install
